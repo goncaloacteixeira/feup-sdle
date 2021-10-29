@@ -15,7 +15,7 @@ public class Test {
 
             do {
                 Scanner scanner = new Scanner(System.in);
-                System.out.println("New Message: ");
+                System.out.print("New Message: ");
 
                 message = scanner.nextLine();
                 socket.send(message.getBytes(ZMQ.CHARSET), 0);

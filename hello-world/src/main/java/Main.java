@@ -12,13 +12,13 @@ public class Main {
                 // Block until a message is received
                 byte[] reply = socket.recv(0);
 
+                String replyStr = new String(reply, ZMQ.CHARSET);
+
                 // Print the message
-                System.out.println(
-                        "Received: [" + new String(reply, ZMQ.CHARSET) + "]"
-                );
+                System.out.println("Received: [" + replyStr + "]");
 
                 // Send a response
-                String response = "Hello, world!";
+                String response = "Hello! Received: " + replyStr;
                 socket.send(response.getBytes(ZMQ.CHARSET), 0);
             }
         }
