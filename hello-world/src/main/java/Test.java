@@ -1,3 +1,4 @@
+import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
@@ -8,7 +9,7 @@ public class Test {
     public static void main(String[] args) {
         try (ZContext context = new ZContext()) {
             // Socket to talk to clients
-            ZMQ.Socket socket = context.createSocket(ZMQ.REQ);
+            ZMQ.Socket socket = context.createSocket(SocketType.REQ);
             socket.connect("tcp://localhost:5555");
 
             String message;
