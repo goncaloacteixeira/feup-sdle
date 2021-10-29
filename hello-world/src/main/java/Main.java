@@ -19,7 +19,7 @@ public class Main {
                 System.out.println("Received: [" + replyStr + "]");
 
                 // Send a response
-                String response = "Hello! Received: " + replyStr;
+                String response = "Hello World!";
                 socket.send(response.getBytes(ZMQ.CHARSET), 0);
             }
         }
